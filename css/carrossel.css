@@ -1,0 +1,131 @@
+/* === CARROSSEL RESPONSIVO E ANIMADO === */
+
+.container-slider {
+  position: relative;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-images {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* altura automática e estável */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Cada slide ocupa toda a área */
+.slider {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* animação inicial */
+  transform: scale(1.05); 
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.slider.on {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1); /* efeito de zoom-out suave */
+}
+
+/* Imagens dentro dos slides */
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* cobre toda a área */
+  border-radius: 10px;
+}
+
+/* Exceção: logotipo deve manter proporção */
+.slider img#logo {
+  object-fit: contain;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Texto sobreposto (legenda) */
+.caption {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translate(-50%, 30px); /* começa abaixo */
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 80%;
+
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Legenda visível apenas no slide ativo */
+.slider.on .caption {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Botões */
+#prev-button,
+#next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,.35);
+  cursor: pointer;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  transition: background .2s ease;
+}
+
+#prev-button { left: 12px; transform: translateY(-50%) rotate(180deg); }
+#next-button { right: 12px; }
+
+#prev-button:hover,
+#next-button:hover { background: rgba(0,0,0,.5); }
+
+#prev-button img,
+#next-button img {
+  width: 26px;
+  height: 26px;
+  opacity: 1;
+  display: block;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #prev-button, #next-button {
+    width: 38px;
+    height: 38px;
+  }
+  #prev-button img, #next-button img {
+    width: 22px;
+    height: 22px;
+  }
+  .caption {
+    font-size: 1rem;
+    padding: 8px 14px;
+  }
+}
