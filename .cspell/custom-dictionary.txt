@@ -1,0 +1,20 @@
+# Custom Dictionary Words
+Azul
+básico
+branco
+conteudo
+Conteúdo
+destaque
+divisao
+Divisão
+Dourado
+escuro
+força
+galeria
+globais
+legível
+mantém
+Responsividade
+topo
+Topo
+Variáveis

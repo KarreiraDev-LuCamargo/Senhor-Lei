@@ -1,0 +1,45 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [
+    {
+      "name": "custom-dictionary",
+      "path": "./.cspell/custom-dictionary.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["custom-dictionary"],
+  "words": [
+    "abaixo",
+    "altura",
+    "animação",
+    "ANIMADO",
+    "apenas",
+    "área",
+    "ativo",
+    "automática",
+    "Botões",
+    "Cada",
+    "CARROSSEL",
+    "cobre",
+    "começa",
+    "dentro",
+    "deve",
+    "efeito",
+    "estável",
+    "Exceção",
+    "inicial",
+    "logotipo",
+    "manter",
+    "ocupa",
+    "proporção",
+    "Responsivo",
+    "RESPONSIVO",
+    "sobreposto",
+    "Texto",
+    "toda",
+    "visível"
+  ],
+  "ignoreWords": [],
+  "import": []
+}
